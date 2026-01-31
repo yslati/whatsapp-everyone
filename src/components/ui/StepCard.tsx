@@ -1,5 +1,5 @@
 import { Step } from '@/data/types';
-import { icons, LucideIcon } from 'lucide-react';
+import { Download, Globe, Users, Zap, LucideIcon } from 'lucide-react';
 
 interface StepCardProps {
   step: Step;
@@ -8,8 +8,15 @@ interface StepCardProps {
   onClick: () => void;
 }
 
+const iconMap: Record<string, LucideIcon> = {
+  Download,
+  Globe,
+  Users,
+  Zap,
+}
+
 export default function StepCard({ step, index, isActive, onClick }: StepCardProps) {
-  const IconComponent = icons[step.icon as keyof typeof icons] as LucideIcon
+  const IconComponent = iconMap[step.icon]
 
   return (
     <div 

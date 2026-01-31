@@ -1,5 +1,5 @@
 import { Feature } from '@/data/types'
-import { icons, LucideIcon } from 'lucide-react'
+import { Users, Zap, Shield, LucideIcon } from 'lucide-react'
 
 interface FeatureCardProps {
   feature: Feature
@@ -7,8 +7,14 @@ interface FeatureCardProps {
   onHover: () => void
 }
 
+const iconMap: Record<string, LucideIcon> = {
+  Users,
+  Zap,
+  Shield,
+}
+
 export default function FeatureCard({ feature, isActive, onHover }: FeatureCardProps) {
-  const IconComponent = icons[feature.icon as keyof typeof icons] as LucideIcon
+  const IconComponent = iconMap[feature.icon]
 
   return (
     <div 
@@ -17,7 +23,7 @@ export default function FeatureCard({ feature, isActive, onHover }: FeatureCardP
       }`}
       onMouseEnter={onHover}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-green-600/10 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-green-500/10 to-green-600/10 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500"></div>
       
       <div className="relative mb-6 p-4 gradient-green rounded-2xl w-fit">
         <IconComponent className="w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 text-white" />

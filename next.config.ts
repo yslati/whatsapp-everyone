@@ -18,6 +18,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
+  
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'next-intl']
+  },
+
   async headers() {
     return [
       {

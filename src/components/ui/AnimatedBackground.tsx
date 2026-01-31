@@ -53,7 +53,7 @@ export function AnimatedBackground({ particleCount = 30 }: { particleCount?: num
 
   return (
     <div className="fixed inset-0 z-0">
-      <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-green-800/10 to-black"></div>
+      <div className="absolute inset-0 bg-linear-to-br from-green-900/20 via-green-800/10 to-black"></div>
       
       {mounted && (
         <>
