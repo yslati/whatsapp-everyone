@@ -70,11 +70,6 @@ export default async function RootLayout({
         <GoogleAnalytics />
         <GoogleTagManagerHead />
         <MicrosoftClarity />
-        <link
-          rel="preload"
-          href="/_next/static/css/app.css"
-          as="style"
-        />
       </head>
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale} >
